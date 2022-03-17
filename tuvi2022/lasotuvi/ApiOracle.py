@@ -164,9 +164,9 @@ for data in datas:
 		matrix1.append(nham)
 		matrix1.append(quy)
 
-		for ii in range(0,16):
-			if(menh == phantu1[ii]):
-				ten_menh2.append(phantusao1[ii])
+		# for ii in range(0,16):
+		# 	if(menh == phantu1[ii]):
+		# 		ten_menh2.append(phantusao1[ii])
 		
 		for y1 in range(1,11):
 			if(ten_can == y1):
