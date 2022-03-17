@@ -2,12 +2,12 @@
 """
 (c) 2016 doanguyen <dungnv2410@gmail.com>.
 """
-from lasotuvi.AmDuong import (dichCung, ngayThangNam, ngayThangNamCanChi, nguHanh,
+from AmDuong import (dichCung, ngayThangNam, ngayThangNamCanChi, nguHanh,
                      nguHanhNapAm, thienCan, timCoThan, timCuc, timHoaLinh,
                      timLuuTru, timPhaToai, timThienKhoi, timThienMa,
                      timThienQuanThienPhuc, timTrangSinh, timTriet, timTuVi,
                      diaChi)
-from lasotuvi.Sao import (saoAnQuang, saoBachHo, saoBacSy, saoBatToa, saoBenh,
+from Sao import (saoAnQuang, saoBachHo, saoBacSy, saoBatToa, saoBenh,
                  saoBenhPhu, saoCoThan, saoCuMon, saoDaiHao, saoDaLa,
                  saoDaoHoa, saoDauQuan, saoDeVuong, saoDiaGiai, saoDiaKhong,
                  saoDiaKiep, saoDiaVong, saoDieuKhach, saoDuong, saoDuongPhu,

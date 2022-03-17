@@ -3,7 +3,7 @@
 (c) 2016 doanguyen <dungnv2410@gmail.com>.
 """
 
-from lasotuvi.Lich_HND import S2L, L2S, jdFromDate
+from Lich_HND import S2L, L2S, jdFromDate
 
 
 thienCan = [
@@ -235,7 +235,7 @@ def ngayThangNam(nn, tt, nnnn, duongLich=True, timeZone=7):
     # if nnnn > 1000 and nnnn < 3000 and nn > 0 and \
     if nn > 0 and \
        nn < 32 and tt < 13 and tt > 0:
-        if duongLich is True:
+        if duongLich == True:
             [nn, tt, nnnn, thangNhuan] = S2L(nn, tt, nnnn, timeZone=timeZone)
         return [nn, tt, nnnn, thangNhuan]
     else:
@@ -256,7 +256,7 @@ def canChiNgay(nn, tt, nnnn, duongLich=True, timeZone=7, thangNhuan=False):
     Returns:
         TYPE: Description
     """
-    if duongLich is False:
+    if duongLich == False:
         [nn, tt, nnnn] = L2S(nn, tt, nnnn, thangNhuan, timeZone)
     jd = jdFromDate(nn, tt, nnnn)
     # print jd
@@ -293,7 +293,7 @@ def ngayThangNamCanChi(nn, tt, nnnn, duongLich=True, timeZone=7):
     Returns:
         TYPE: Description
     """
-    if duongLich is True:
+    if duongLich == True:
         [nn, tt, nnnn, thangNhuan] = \
             ngayThangNam(nn, tt, nnnn, timeZone=timeZone)
     # Can của tháng
@@ -417,7 +417,7 @@ def nguHanhNapAm(diaChi, thienCan, xuatBanMenh=False):
     try:
         nh = matranNapAm[diaChi][thienCan]
         if nh[0] in ["K", "M", "T", "H", "O"]:
-            if xuatBanMenh is True:
+            if xuatBanMenh == True:
                 return banMenh[nh]
             else:
                 return nh[0]
@@ -429,13 +429,13 @@ def dichCung(cungBanDau, *args):
     cungSauKhiDich = int(cungBanDau)
     for soCungDich in args:
         cungSauKhiDich += int(soCungDich)
-    if cungSauKhiDich % 12 is 0:
+    if cungSauKhiDich % 12 == 0:
         return 12
     return cungSauKhiDich % 12
 
 
 def khoangCachCung(cung1, cung2, chieu=1):
-    if chieu is 1:  # Con trai, chiều dương
+    if chieu == 1:  # Con trai, chiều dương
         return (cung1 - cung2 + 12) % 12
     else:
         return (cung2 - cung1 + 12) % 12
@@ -444,7 +444,7 @@ def khoangCachCung(cung1, cung2, chieu=1):
 def timCuc(viTriCungMenhTrenDiaBan, canNamSinh):
     canThangGieng = (canNamSinh * 2 + 1) % 10
     canThangMenh = ((viTriCungMenhTrenDiaBan - 3) % 12 + canThangGieng) % 10
-    if canThangMenh is 0:
+    if canThangMenh == 0:
         canThangMenh = 10
     return nguHanhNapAm(viTriCungMenhTrenDiaBan, canThangMenh)
 
@@ -470,10 +470,9 @@ def timTuVi(cuc, ngaySinhAmLich):
         cuc += cucBanDau
         cungDan += 1  # Dịch vị trí cung Dần
     saiLech = cuc - ngaySinhAmLich
-    if saiLech % 2 is 1:
+    if saiLech % 2 == 1:
         saiLech = -saiLech  # Nếu sai lệch là chẵn thì tiến, lẻ thì lùi
     return dichCung(cungDan, saiLech)
-
 
 def timTrangSinh(cucSo):
     """Tìm vị trí của Tràng sinh
